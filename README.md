@@ -1,2 +1,2 @@
-# yayi-gold.github.io
-yayi.gold
+# 亚一黄金
+www.yayi.gold
