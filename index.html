@@ -1,147 +1,176 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>今日湖南 | HuNan.Today</title>
-    <meta name="description" content="Hunan.Today" />
-    <style>
-      body {
-        background:#fff;
-        margin: 0;
-        padding: 0;
-      }
-      .wrap {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-        word-break:break-all;
-        color: #000;
-        min-height: 100vh;
-      }
-      .main {
-        position: relative;
-        top: 0;
-        left: 0;
-        text-align: left;
-        line-height: 1.75;
-        padding: 0 10px;
-        z-index: 2;
-      }
-      .main h1 {
-        text-align: center;
-        font-size: 2em;
-        line-height: 2.2em;
-        padding: 0;
-        margin: -20px 0 0;
-        background: #eee;
-        border-radius: .25em .25em 0 0;
-        color: #000;
-      }
-      .main h1 {
-        font-size: 2em;
-      }
-      .main ul,
-      .main ol {
-        margin: 0 0 0 20px;
-        padding: 0;
-      }
-      .main li {
-        margin: 0;
-        padding: 0;
-      }
-      .logo {
-        text-align: center;
-        padding: 0 0 20px;
-      }
-      .logo img {
-        max-width: 75%;
-        vertical-align: middle;
-      }
-      a,a:visited {
-        color: #666;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <div class="logo"><a href="https://mi.aliyun.com/detail/online.html?domainName=hunan.today" target="_blank">今日湖南</a></div>
-      <div class="main">
-        <h1>Hunan.Today</h1>
-        <h2>域名交易方式</h2>
-        <ol>
-          <li><strong>阿里云一口价购买</strong>：<a
-              href="https://mi.aliyun.com/detail/online.html?domainName=hunan.today"
-              target="_blank"
-              >https://mi.aliyun.com/detail/online.html?domainName=hunan.today</a
-            ><br>（如果没发布一口价请联系我们带价push）
-          </li>
-          <li><strong>阿里云带价push</strong>：买家把账号发给我们，我们把域名带价过户(push)到买家账号，买家接收后，系统会自动把域名转给买家。
-          </li>
-        </ol>
+<html lang="en">
 
-        <h2>阿里云操作指南</h2>
-        <ul>
-          <li>
-            <strong>注册账号</strong>：
-            <a
-              href="https://account.aliyun.com/register/register.htm"
-              target="_blank"
-              >https://account.aliyun.com/register/register.htm</a
-            ><br>
-            注册成功后，系统会自动发送验证邮件，登录邮箱后进行邮件验证。
-          </li>
-          <li>
-            <strong>添加身份认证</strong>：
-            <a
-              href="https://account.console.aliyun.com/v2/#/authc/home"
-              target="_blank"
-              >https://account.console.aliyun.com/v2/#/authc/home</a
-            ><br>
-            提交后需要等待审核。
-          </li>
-          <li>
-            <strong>添加域名模板</strong>：
-            <a
-              href="https://dc.console.aliyun.com/next/#/info-template/TemplateManage?type=common"
-              target="_blank"
-              >https://dc.console.aliyun.com/next/#/info-template/TemplateManage?type=common</a
-            ><br>
-            提交后需要等待审核。
-          </li>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日湖南 HuNan.Today</title>
+  <script>
+    (function (args) {
+      var wait = [],
+        isReady = false,
+        d = document,
+        w = window,
+        isMobile = args.isMobile
 
-          <li>
-            <strong>绑定支付宝账号</strong>：
-            <a href="https://account.console.aliyun.com/#/bind" target="_blank"
-              >https://account.console.aliyun.com/#/bind</a
-            ><br>
-            一口价购买和接收域名push都必须绑定支付宝账号。
-          </li>
+      function handler(e) {
+        if (isReady) {
+          return
+        }
 
-          <li>
-            <strong>接收push域名</strong>：
-            <a
-              href="https://domain.console.aliyun.com/#/buyer/pushList"
-              target="_blank"
-              >https://domain.console.aliyun.com/#/buyer/pushList</a
-            ><br>
-            接收后交易完成，系统会自动模板过户。
-          </li>
-          <li>
-            <strong>管理域名</strong>：
-            <a
-              href="https://dc.console.aliyun.com/next/#/domain/list/all-domain"
-              target="_blank"
-              >https://dc.console.aliyun.com/next/#/domain/list/all-domain</a
-            ><br>
-            可以进行修改dns、域名解析、域名续费等操作。
-          </li>
-        </ul>
-      </div>
-    </div>
-  </body>
-<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-<script>LA.init({id:"JvqEGjX1NGtEYGlq",ck:"JvqEGjX1NGtEYGlq"})</script>
+        if (e.type === 'onreadystatechange' && d.readyState !== 'complete') {
+          return
+        }
+
+        for (var i = 0; i < wait.length; i++) {
+          wait[i].call(d)
+        }
+        isReady = true
+        wait = null
+      }
+
+      if (d.addEventListener) {
+        d.addEventListener('DOMContentLoaded', handler, false)
+        d.addEventListener('readystatechange', handler, false) //IE9+
+        w.addEventListener('load', handler, false)
+      } else if (d.attachEvent) {
+        d.attachEvent('onreadystatechange', handler)
+        w.attachEvent('onload', handler)
+      }
+
+      function ready(fn) {
+        if (isReady) {
+          fn.call(document)
+        } else {
+          wait.push(fn)
+        }
+      }
+
+      function rem() {
+        // 基准字号
+        if (args.fontSize) {
+          d.body.style.fontSize = args.fontSize
+        }
+
+        var docE = d.documentElement
+        var maxWidth = args.maxWidth // 最大宽
+        var minH = docE.style.minHeight
+        docE.style.minHeight = '80vh'
+        var BCR = docE.getBoundingClientRect()
+        var innerWidth = BCR.width || window.innerWidth
+        var innerHeight = BCR.height || window.innerHeight
+        var bW = isMobile
+          ? innerWidth
+          : innerWidth > 0 && innerWidth < innerHeight
+            ? Math.min(innerWidth, maxWidth)
+            : Math.min(innerWidth, maxWidth)
+        var width = Math.min(bW, maxWidth)
+        docE.style.minHeight = minH
+        docE.style.fontSize = width / 7.5 + 'px'
+        d.body.className = (innerWidth / innerHeight) < 1 ? 'vertical' : 'horizontal'
+      }
+
+      if (args.maxWidth > 320) {
+        w.addEventListener('resize', rem)
+        try {
+          rem()
+        } catch (e) { }
+        ready(rem)
+      }
+
+      d.ready = ready
+    })({
+      maxWidth: +'560',
+      fontSize: '14px'
+    })
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background: #6598EA url('./mzd.jpg') no-repeat 50% 0;
+      background-size: 100% 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      flex-direction: column;
+    }
+
+    body.vertical {
+      background-position: 50% 100%;
+      background-size: auto 100%;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 a,
+    h2 a {
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 0.6rem;
+    }
+
+    .dn {
+      color: #ebdf07;
+    }
+
+    .tld {
+      color: #f8b409;
+    }
+
+    a,
+    a:visited {
+      color: #07eb12;
+      text-underline-offset: .16rem;
+    }
+
+    .mod {
+      width: 7.5rem;
+      padding: .2rem 0;
+      text-align: left;
+      font-size: .5rem;
+    }
+
+    .mod p {
+      margin: 0;
+      padding: .1rem .2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mod">
+    <h2><a href="https://cnlei.com/d/go?p=ali&d=hunan.today">今日湖南</a></h2>
+    <h1><a href="https://cnlei.com/d/go?p=ali&d=hunan.today"><strong class="dn">HuNan</strong>.<strong
+          class="tld">Today</strong></a></h1>
+  </div>
+  <div class="mod">
+    <p>该域名可出售！</p>
+    <p>This domain is for sale.</p>
+    <p>trade: <a href="https://cnlei.com/d/go?p=ali&d=hunan.today">aliyun.com</a></p>
+    <p>email: <a href="mailto:sinobrands@qq.com">sinobrands@qq.com</a></p>
+  </div>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"JvqEGjX1NGtEYGlq",ck:"JvqEGjX1NGtEYGlq"})</script>
+</body>
+
 </html>
